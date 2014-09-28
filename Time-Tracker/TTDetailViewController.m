@@ -8,7 +8,7 @@
 
 #import "TTDetailViewController.h"
 
-@interface TTDetailViewController ()
+@interface TTDetailViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 
@@ -38,6 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - IBActions
 
 - (IBAction)add:(id)sender {
 }
@@ -49,6 +50,18 @@
 }
 
 - (IBAction)report:(id)sender {
+}
+
+#pragma mark - TextField methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self.textField resignFirstResponder]; // makes keyboard move away
+    return YES;
+}
+
+-(void)textFieldShouldEndEditing {
+    // Add a textFieldShouldEndEditing method to store the text of the field as the project title
 }
 
 

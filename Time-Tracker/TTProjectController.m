@@ -88,6 +88,9 @@
 
 
 
+
+
+
 /*
 Create a ProjectController singleton class (add the instanceType method)
 The project controller should hold an array of Projects
